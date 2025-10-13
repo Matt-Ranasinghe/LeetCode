@@ -1,0 +1,8 @@
+*.sln
+*.json
+*.cache
+*.props
+*.targets
+*.csproj
+*Assembly*
+*editor*
