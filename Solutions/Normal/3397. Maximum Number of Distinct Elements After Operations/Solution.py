@@ -4,7 +4,7 @@ class Solution:
         result: int = 1
         next_best: int = nums[0] - k + 1
         for i in range(1, len(nums)):
-            if(next_best < nums[i]):
+            if(next_best < nums[i] - k):
                 next_best = nums[i] - k + 1
                 result += 1
             elif(next_best <= nums[i] + k):
