@@ -1,15 +1,22 @@
 ﻿public class Solution {
-    public bool HasSameDigits(string s) {
-        int n = s.Length;
-        char[] arr = s.ToCharArray();
-        for (int i = 1; i <= n - 2; i++)
-        {
-            for (int j = 0; j <= n - 1 - i; j++)
-            {
-                arr[j] =
-                    (char)(((arr[j] - '0') + (arr[j + 1] - '0')) % 10 + '0');
+    public int CountValidSelections(int[] nums) {
+        int n = nums.Length;
+        int[] prefixSum = new int[n];
+        prefixSum[0] = nums[0];
+        for(int i = 1; i < n; i++){
+            prefixSum[i] += prefixSum[i - 1] + nums[i];
+        }
+        bool even = prefixSum[n - 1] % 2 == 0;
+        int half = 0, result = 0;
+        half = prefixSum[n - 1] / 2;
+        for(int i = 0; i < n; i++){
+            if(even){
+                if(prefixSum[i] == half && nums[i] == 0) result += 2;
+            }
+            else{
+                if((prefixSum[i] == half || prefixSum[i] - 1 == half) && nums[i] == 0) result += 1;
             }
         }
-        return arr[0] == arr[1];
+        return result;
     }
 }
