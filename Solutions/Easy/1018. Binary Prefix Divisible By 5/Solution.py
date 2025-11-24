@@ -1,6 +1,6 @@
 class Solution:
     def prefixesDivBy5(self, nums: List[int]) -> List[bool]:
-        result: List[int] = []
+        result: List[bool] = []
         rem: int = 0
         for num in nums:
             rem <<= 1
