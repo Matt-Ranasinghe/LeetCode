@@ -4,10 +4,10 @@
         foreach (int x in nums) total += x;
 
         long need = total % p;
-        if (need == 0) return 0;  // Already divisible
+        if (need == 0) return 0;
 
         Dictionary<long, int> map = new Dictionary<long, int>();
-        map[0] = -1; // Prefix before the array
+        map[0] = -1;
 
         long prefix = 0;
         int res = nums.Length;
@@ -20,8 +20,6 @@
             if (map.ContainsKey(target)) {
                 res = Math.Min(res, i - map[target]);
             }
-
-            // Update prefix index
             map[prefix] = i;
         }
 
