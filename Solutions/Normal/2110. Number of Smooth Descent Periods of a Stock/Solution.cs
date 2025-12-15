@@ -1,6 +1,6 @@
 ﻿public class Solution {
     public long GetDescentPeriods(int[] prices) {
-        int start = -1, startDist = -1, current = -1;
+        int start = -1, startDist = -1;
         int n = prices.Length;
         long result = 0;
         for(int i = 0; i < n; i++){
