@@ -9,6 +9,7 @@
             cur[j] = grid[0][j] + cur[j - 1];
             sum[j] = cur[j];
             if(cur[j] <= k) result++;
+            else break;
         }
         for(int i = 1; i < n; i++){
             for(int j = 0; j < m; j++){
