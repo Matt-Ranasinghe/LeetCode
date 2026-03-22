@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Linq;
-
-public class Solution {
+﻿public class Solution {
     public bool FindRotation(int[][] mat, int[][] target) {
         for (int rot = 0; rot < 4; rot++) {
             if (AreMatricesEqual(mat, target)) return true;
