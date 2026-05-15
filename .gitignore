@@ -3,7 +3,7 @@
 *.cache
 *.props
 *.targets
-*.csproj
+*.csproj*
 *Assembly*
 *editor*
 obj
