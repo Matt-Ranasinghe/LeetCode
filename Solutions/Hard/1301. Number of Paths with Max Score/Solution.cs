@@ -4,9 +4,6 @@
         int MOD = 1_000_000_007;
         int[,] dpValue = new int[n, m];
         int[,] dpRoutes = new int[n, m];
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) dpValue[i, j] = -1;
-        }
         dpValue[n - 1, m - 1] = 0;
         dpRoutes[n - 1, m - 1] = 1;
         int[][] directions = new int[3][]{
@@ -28,7 +25,7 @@
             foreach (int[] direction in directions) {
                 int cx = cell.x + direction[0], cy = cell.y + direction[1];
                 if (cx < 0 || cy < 0 || board[cx][cy] == 'X') continue;
-                int cellValue = (board[cx][cy] == 'E' || board[cx][cy] == 'S') ? 0 : (board[cx][cy] - '0');
+                int cellValue = board[cx][cy] == 'E' ? 0 : (board[cx][cy] - '0');
                 int newVal = cellValue + val;
                 if (dpValue[cx, cy] < newVal) {
                     dpValue[cx, cy] = newVal;
@@ -43,7 +40,6 @@
                 }
             }
         }
-        if (dpValue[0, 0] == -1) return new int[2] { 0, 0 };
         return new int[2] { dpValue[0, 0], dpRoutes[0, 0] };
     }
 }
