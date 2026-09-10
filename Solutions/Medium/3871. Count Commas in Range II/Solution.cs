@@ -1,7 +1,6 @@
 ﻿public class Solution {
     public long CountCommas(long n) {
         if(n < 1000) return 0;
-        long maxCommas = 0;
         long UB = 999999, LB = 999, count = 1;
         long result = 0;
         while(UB < n){
