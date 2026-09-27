@@ -1,4 +1,8 @@
-﻿public class Solution {
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+public class Solution {
     public string ReverseParentheses(string s) {
         Stack<int> stack = new Stack<int>();
         int n = s.Length;
