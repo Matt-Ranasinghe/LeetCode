@@ -5,4 +5,4 @@
         int mid = n / 2;
         return nums.Select(x => (int)Math.Abs(x - nums[mid])).Sum();
     }
-}
+}#
